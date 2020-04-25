@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+</head>
+<body>
+  <script type="text/javascript">
+    "use strict";
+    var x = prompt('Введите число 2 или 3 и получите набор цифр');
+    var y = x;
+    var msg;
+    var i;
+    for (i = 0; i < 61; i++) {
+      x = y * x;
+      msg = x;
+      let li = document.createElement('li');
+      li.innerHTML = msg;
+      document.body.append(li);
+      i++;
+    }
+  </script>
+</body>
+</html>
