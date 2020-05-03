@@ -4,21 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>for</title>
+    <style>
+      .input__style{
+        border: 3px solid grey;
+        padding: 20px;
+        font-size: 30px;
+        margin: 0 auto;
+        border-radius: 10px;
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+      }
+    </style>
 </head>
 <body>
+  <input class="input__style" type="text" id="num"  placeholder="Введите число">
   <script type="text/javascript">
     "use strict";
-    var x = prompt('Введите число 2 или 3 и получите набор цифр');
-    var y = x;
-    var msg;
-    var i;
-    for (i = 0; i < 61; i++) {
-      x = y * x;
-      msg = x;
-      let li = document.createElement('li');
-      li.innerHTML = msg;
-      document.body.append(li);
-      i++;
+    let msg, x, y; 
+    document.getElementById("num").addEventListener("input", calc);
+    function calc(){
+      let div = document.createElement('div');
+      div.id = "clear";
+      let clear = document.getElementsByTagName('div')[0];
+      document.body.removeChild(document.body.children[1]);
+      document.body.append(div);
+      let ul = document.createElement('ul');
+      document.body.append(ul);
+      div.append(ul); 
+      x = document.getElementById("num").value;
+      y = x;
+      for (let i = 0; i < 61; i++) {
+        x = y * x;
+        msg = x;
+        let li = document.createElement('li');
+        li.innerHTML = msg;
+        document.body.append(li);
+        ul.append(li); 
+        i++;
+        }
     }
   </script>
 </body>
