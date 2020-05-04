@@ -35,11 +35,12 @@
       document.body.append(ul);
       div.append(ul); 
       factor = numberElement.value;
+      let result = numberElement.value;
      //
       for (let i = 0; i < 61; i++) {
-        numberElement.value = numberElement.value * factor;
+        result *= factor;
         let li = document.createElement('li');
-        li.innerHTML = numberElement.value;
+        li.innerHTML = result;
         document.body.append(li);
         ul.append(li); 
         i++;
